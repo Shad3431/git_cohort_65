@@ -38,3 +38,6 @@ root@41827bc6739d:/tmp# rm -d test/
 rm: cannot remove 'test/': Directory not empty
 root@41827bc6739d:/tmp# rm -r test/
 exit
+
+
+
