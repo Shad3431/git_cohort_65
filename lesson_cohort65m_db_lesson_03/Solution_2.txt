@@ -1,0 +1,32 @@
+1)Выведите «name» и «quantity» всех продуктов с «productCode» равным «PEC»
+
+SELECT name, quantity FROM products WHERE productCode = 'PEC';
+2)Выведите «name» всех продуктов с «quantity» больше 9000.
+
+SELECT name FROM products WHERE quantity > 9000;
+3)Выведите «name», «productCode» и «price» всех продуктов дешевле 2
+
+SELECT name, productCode, price FROM products WHERE price < 2.0;
+4)Отобразить 'name', 'quantity' и price всех продуктов с 'productCode' равным 'PEN'
+
+SELECT name, quantity, price FROM products WHERE productCode = 'PEN';
+5*) [Optional] Отобразить 'productID' всех продуктов, содержащих слово 'Blue' в их 'name'
+
+SELECT productID FROM products WHERE name LIKE '%Blue%';
+6*) [Optional] Отобразить 'name' всех продуктов, содержащих символ '2' в их 'name' и 'quantity' больше чем 9000.
+
+SELECT name FROM products WHERE quantity > 9000 AND name LIKE '%2%';
+
+7*) [Optional] Отобразить name и price всех продуктов,
+с колличеством в диапазоне между 4000 и 9000. Отсортировать вывод
+ в алфавитном порядке по name.
+SELECT name,price FROM products WHERE quantity BETWEEN 4000 AND 9000 ORDER BY name;
+
+8*) [Optional] Отобразить всю существующую информацию о
+продуктах имеющих price 0.53, 0.54 или 1.38
+SELECT * FROM products WHERE price IN (0.53, 0.54, 1.38);
+
+
+
+
+

@@ -1,0 +1,21 @@
+docker -v
+docker --help
+docker images
+docker ps
+docker ps --help
+docker ps -a
+docker pull ubuntu:24.04
+docker run ubuntu:24.04
+docker run --name bubuntu ubuntu:24.04
+docker rm bubuntu
+docker rm 69530e250013
+docker rmi ubuntu:24.04
+docker run -it --name bubuntu ubuntu:24.04
+docker start bubuntu
+docker exec -it bubuntu bash
+docker attach bubuntu (default detach Crtl-P, Ctrl-Q)
+docker attach --detach-keys "ctrl-x" bubuntu
+docker stop bubuntu
+
+docker run --name mysqldb -e MYSQL_ROOT_PASSWORD=1234 -d mysql:8.4
+docker exec -it mysqldb mysql -u root -p

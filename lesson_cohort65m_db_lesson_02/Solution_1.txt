@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS weekdays (
+         number    INT,
+         weekday         VARCHAR(20),
+         PRIMARY KEY  (weekday)
+       );
+
+SHOW CREATE TABLE weekdays \G
+
+INSERT INTO weekdays VALUES
+        (1, 'Sunday'),
+		(2, 'Monday'),
+		(3, 'Tuesday'),
+		(4, 'Wednsday'),
+		(5, 'Thursday'),
+		(6, 'Friday'),
+		(7, 'Saturday');
+
+SELECT * FROM weekdays;

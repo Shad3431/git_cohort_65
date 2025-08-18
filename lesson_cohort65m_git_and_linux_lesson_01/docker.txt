@@ -1,0 +1,15 @@
+docker -v
+docker --help
+docker images
+docker ps
+docker ps --help
+docker ps -a
+docker pull ubuntu:24.04
+docker run --help
+docker run 65ae7a6f3544
+docker run --name bubuntu ubuntu:24.04
+docker rm --help
+docker rm bubuntu
+docker rm 9a2122827a37
+docker rmi --help
+docker rmi ubuntu:24.04

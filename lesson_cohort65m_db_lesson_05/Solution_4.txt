@@ -1,0 +1,53 @@
+1) Показать всю информацию о товарах, поставляемых компанией «ABC Traders».
+
+	SELECT p.*, s.name FROM products_suppliers ps
+          JOIN products p ON ps.productID = p.productID
+          JOIN suppliers s ON ps.supplierID = s.supplierID
+          WHERE s.name = 'ABC Traders';
+
+2) Показать общую стоимость всей продукции, поставляемой
+поставщиками: «XYZ Company», «QQ Corp».
+
+    SELECT SUM(p.quantity * p.price) AS `Total cost` FROM products_suppliers ps
+          JOIN products p ON ps.productID = p.productID
+          JOIN suppliers s ON ps.supplierID = s.supplierID
+          WHERE s.name IN ('XYZ Company','QQ Corp');
+
+3) Показать среднюю цену поставки продукции по поставщикам.
+
+SELECT CAST(SUM(p.quantity * p.price)/SUM(p.quantity) AS DECIMAL(7,2))
+          AS `Avarage price`, s.name FROM products_suppliers ps
+          JOIN products p ON ps.productID = p.productID
+          JOIN suppliers s ON ps.supplierID = s.supplierID
+          GROUP BY s.supplierID;
+
+4) Найдите поставщика самых дешевых маркеров (по коду MRK) и укажите его название,
+ телефон и цену маркера.
+
+ INSERT INTO products_suppliers VALUES
+                   (1006,511),
+                   (1007,503);
+
+
+ SELECT s.name, s.phone, p.price FROM products_suppliers ps
+          JOIN products p ON ps.productID = p.productID
+          JOIN suppliers s ON ps.supplierID = s.supplierID
+          WHERE p.productCode = 'MRK'
+          ORDER BY p.price LIMIT 1;
+
+ UPDATE products SET price = 100 WHERE productID = 1007;
+
+5*) Показать информацию о поставщике, который поставляет максимальное
+ количество продукции по productCode:
+
+  `Supplier Name`   `Supplier Phone`  `Number Of Product Codes`
+
+
+  SELECT s.name AS `Supplier Name`,
+	      s.phone AS `Supplier Phone`,
+          COUNT(DISTINCT p.productCode) AS `Number Of Product Codes`
+          FROM products_suppliers ps
+          JOIN products p ON ps.productID = p.productID
+          JOIN suppliers s ON ps.supplierID = s.supplierID
+          GROUP BY s.supplierID
+		  ORDER BY 3 DESC LIMIT 1;

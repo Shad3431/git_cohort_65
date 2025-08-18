@@ -1,0 +1,24 @@
+SHOW DATABASES;
+CREATE DATABASE cohort_65;
+CREATE DATABASE IF NOT EXISTS cohort_65;
+SHOW WARNINGS;
+DROP DATABASE cohort_65;
+DROP DATABASE IF EXISTS cohort_65;
+USE cohort_65;
+SELECT DATABASE();
+SHOW TABLES;
+CREATE TABLE IF NOT EXISTS products (
+         productID    INT UNSIGNED  NOT NULL AUTO_INCREMENT,
+         productCode  CHAR(3)       NOT NULL DEFAULT '',
+         name         VARCHAR(30)   NOT NULL DEFAULT '',
+         quantity     INT UNSIGNED  NOT NULL DEFAULT 0,
+         price        DECIMAL(7,2)  NOT NULL DEFAULT 99999.99,
+         PRIMARY KEY  (productID)
+       );
+
+SELECT * FROM products;
+INSERT INTO products VALUES (1001, 'PEN', 'Pen Red', 5000, 1.23);
+ <---DELETE FROM products WHERE productID LIKE '1002';-->
+INSERT INTO products VALUES
+         (NULL, 'PEN', 'Pen Blue',  8000, 1.25),
+         (NULL, 'PEN', 'Pen Black', 2000, 1.25);
