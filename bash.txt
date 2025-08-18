@@ -1,0 +1,40 @@
+ls
+ls home/
+ls boot/
+ls etc/
+ls sbin/
+ls usr/
+ls opt/
+ls tmp/
+cd usr
+cd include
+cd ..
+cd local/
+cd ../../
+pwd
+cd usr/lib
+pwd
+echo "Hello world!" > hello.txt
+cat hello.txt
+rm hello.txt
+cd /
+cd tmp
+echo "First" > work.txt
+echo "Second" >> work.txt
+cp work.txt w1.txt
+mv w1.txt ../..
+mkdir test
+ls -a
+ls -l
+ls -al /
+cat ../.dockerenv
+touch test/work2.txt
+printf "First\nSecond\nHELLO" >> test/work2.txt
+root@41827bc6739d:/tmp# rm test/
+rm: cannot remove 'test/': Is a directory
+root@41827bc6739d:/tmp# ls
+test  work.txt
+root@41827bc6739d:/tmp# rm -d test/
+rm: cannot remove 'test/': Directory not empty
+root@41827bc6739d:/tmp# rm -r test/
+exit
