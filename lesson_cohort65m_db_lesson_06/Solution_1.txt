@@ -1,0 +1,11 @@
+1. Find all pets with name beginning with five started characters of alphabets;
+
+  db.pets.find({name: {$gte: "A", $lt: "F"}})
+  db.pets.find({name: {$regex:"[A-E].*"}})
+  db.pets.find({name: {$regex:"^[a-e].*", $options:"i"}})
+  db.pets.find({name: /[A-E].*/})
+  db.pets.find({name: /^[a-e].*/i})
+  
+2*. Find third and fourth from pets by ages.
+
+   db.pets.find().sort({age:-1}).skip(2).limit(2)
