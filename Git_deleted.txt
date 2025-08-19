@@ -1,0 +1,26 @@
+git --version
+cd C:\Users\shad3\Linux Docker\Classwork
+C:\Users\shad3\Linux Docker\Classwork>dir
+git init
+git status
+git add bash.txt //add file to git in stage zone not commited
+git commit -m "Add bash.txt"
+git log
+git log --oneline
+git diff
+git add bash.txt // after chenges
+git commit -m "Update bash.txt"
+git add lesson_cohort65m_db_lesson_06 // add folder to git in stage zone not commited
+
+git branch
+git branch feature // create new branch
+git switch feature // move to branch feature not included changes
+git checkout feature // move to branch feature included changes
+git add . //add all file in dirrectory to git in stage zone not commited
+git checkout master // go back to branch master
+git merge feature // add commits from branch feature to master
+git remote add origin https://github.com/Shad3431/git_cohort_65.git
+git remote add origin https://github.com/Shad3431/git_cohort_65.git
+git push -u origin master
+d8ef57d
+git pull // download commits from github
