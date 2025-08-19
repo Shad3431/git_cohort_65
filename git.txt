@@ -1,0 +1,30 @@
+git -version
+git status
+git add bash.txt
+git commit -m "Add bash.txt"
+git log
+git log --oneline
+git diff
+git branch
+git branch feature
+git checkout feature
+-- git switch feature -- same
+git add .
+git commit -m "Add all files"
+git checkout master
+
+git remote add origin https://github.com/01452/git_cohort_65.git
+git push -u origin master
+git pull
+git config list
+git config --global user.email "Your email"
+
+git log --oneline --graph --all
+git checkout -b conflict
+mkdir conflict-demo
+cd conflict-demo
+echo "Hello world" > notes.txt
+git checkout -b conflict2
+mkdir conflict-demo
+cd conflict-demo
+echo "This is conflict line" > notes.txt
